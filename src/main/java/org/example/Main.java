@@ -1,6 +1,8 @@
 package org.example;
 
 public class Main {
+    private static double pi = Math.PI;
+
 
     /** Method 1
      * Method name: circleArea
@@ -9,7 +11,10 @@ public class Main {
      * Method signature: circleArea(int)
      * Returns the area of a circle. */
     public static double circleArea(int radius) {
-        return 0;
+        double pi = Math.PI;
+        double rad_squared = Math.pow(radius, 2);
+        double area = pi * rad_squared;
+        return Math.round(area * 100.0) / 100.0;
     }
 
     /** Method 2
@@ -19,8 +24,9 @@ public class Main {
      * Method signature: circleCircum(int)
      * Returns the circumference of a circle. */
     public static double circleCircum(int radius) {
-        return 0;
+        return Math.round(2*pi*radius*100.0)/100.0;
     }
+
 
     /** Method 3
      * Method name: circleInfo
@@ -33,7 +39,7 @@ public class Main {
      * Circumference: 18.85
      * Area: 28.27 */
     public static String circleInfo(int radius) {
-        return null;
+        return "Radius: " + radius + "\nCircumference: " + circleCircum(radius) + "\nArea: " + circleArea(radius);
     }
 
     /** Method 4
@@ -44,8 +50,9 @@ public class Main {
      * Returns a String detailing the number of hours and minutes.
      * Format of returned String: e.g. 3 hours and 46 minutes */
     public static String minutesToHoursMinutes(int minutes) {
-
-        return null;
+        int hours = minutes/60;
+        int minute_actual = minutes%60;
+        return hours + " hours and " + minute_actual + " minutes";
     }
 
     /** Method 5
@@ -57,8 +64,9 @@ public class Main {
      * Format of returned String: e.g. 3:56 pm
      * */
     public static String twentyFourToTwelve(String time) {
-
-        return null;
+        int hour = Integer.parseInt(time.substring(0,2));
+        int twelve_hour = hour-12;
+        return Integer.toString(twelve_hour) + time.substring(2) + " pm";
 
     }
 
@@ -69,8 +77,10 @@ public class Main {
      * Method signature: distanceBetweenTwoPoints(int,int,int,int)
      * Returns the distance between two points */
     public static double distanceBetweenTwoPoints(int x1, int y1, int x2, int y2) {
+        double distance1 = Math.pow(x2-x1,2);
+        double distance2 = Math.pow(y1-y2,2);
 
-        return 0;
+        return Math.round(Math.sqrt(distance1+distance2)*100.0)/100.0;
 
     }
 
@@ -82,19 +92,18 @@ public class Main {
      * Returns the degrees celsius equivalent of the degrees in fahrenheit */
     public static double fahrenheitToCelsius(int fahrenheit) {
 
-        return 0;
-
+        return Math.round((fahrenheit-32)/9.0*5.0*100.0)/100.0;
     }
 
     /** Method 8
      * Method name: celsiusToFahrenheit
      * Method return type: double
-     * Method parameter: degrees celsius
+//     * Method parameter: degrees celsius
      * Method signature: celsiusToFahrenheit(int)
      * Returns the degrees fahrenheit equivalent of the degrees in celsius */
     public static double celsiusToFahrenheit(int celsius) {
 
-        return 0;
+        return (celsius*9/5.0)+32;
 
     }
 
